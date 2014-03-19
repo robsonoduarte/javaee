@@ -6,7 +6,7 @@ JSR 356: Java API for WebSocket
   
   
    ---------------------------------------------------------------------------------------------------
-    >  JSR home page https://jcp.org/en/jsr/detail?id=356
+    >  [JSR home page]   (https://jcp.org/en/jsr/detail?id=356)
   
 
 
