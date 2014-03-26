@@ -20,6 +20,7 @@ public class ServerEndPoint {
 
 	@OnOpen
 	public void ready(final Session session) {
+		
 		scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 			
 			@Override
@@ -27,6 +28,7 @@ public class ServerEndPoint {
 				session.getAsyncRemote().sendText("1 2 3 testing...");
 				
 			}
+
 		}, 1, 1, TimeUnit.SECONDS);
 	}
 
