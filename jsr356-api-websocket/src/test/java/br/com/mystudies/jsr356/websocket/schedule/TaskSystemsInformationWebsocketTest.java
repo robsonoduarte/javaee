@@ -108,17 +108,10 @@ public class TaskSystemsInformationWebsocketTest {
 
 		List<SystemInformation> systemsInformations = new ArrayList<>();
 
-		SystemInformation systemInformation = new SystemInformation();
-		systemInformation.setTemp("si1");
-		systemsInformations.add(systemInformation);
 
-		systemInformation = new SystemInformation();
-		systemInformation.setTemp("si2");
-		systemsInformations.add(systemInformation);
-
-		systemInformation = new SystemInformation();
-		systemInformation.setTemp("si3");
-		systemsInformations.add(systemInformation);
+		systemsInformations.add(new SystemInformation("Bureau", 100));
+		systemsInformations.add(new SystemInformation("Concentre", 200));
+		systemsInformations.add(new SystemInformation("LNO", 300));
 
 		return systemsInformations;
 	}

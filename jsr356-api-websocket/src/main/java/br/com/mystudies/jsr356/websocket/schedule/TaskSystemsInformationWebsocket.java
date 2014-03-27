@@ -5,6 +5,7 @@ import java.util.List;
 import javax.websocket.Session;
 
 import br.com.mystudies.jsr356.domain.SystemInformation;
+import br.com.mystudies.jsr356.service.BasicSystemInformationService;
 import br.com.mystudies.jsr356.service.SystemsInformationService;
 
 public class TaskSystemsInformationWebsocket implements Runnable{
@@ -16,10 +17,16 @@ public class TaskSystemsInformationWebsocket implements Runnable{
 
 	private Session session;
 
+	
+	
+
+
 
 
 	public TaskSystemsInformationWebsocket(Session session) {
 		this.session = session;
+		// TODO USE CDI
+		systemsInformationService = new BasicSystemInformationService();
 	}
 
 
@@ -41,7 +48,7 @@ public class TaskSystemsInformationWebsocket implements Runnable{
 				String temp = "";
 
 				for (SystemInformation systemInformation : systemsInformationUpdated) {
-					temp += systemInformation.getTemp() + " ";
+					temp += systemInformation + " ";
 				}
 
 				session.getAsyncRemote().sendText(temp);
