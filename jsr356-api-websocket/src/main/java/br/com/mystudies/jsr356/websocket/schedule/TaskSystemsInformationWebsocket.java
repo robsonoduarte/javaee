@@ -6,13 +6,15 @@ import javax.websocket.Session;
 
 import br.com.mystudies.jsr356.domain.SystemInformation;
 import br.com.mystudies.jsr356.service.BasicSystemInformationService;
-import br.com.mystudies.jsr356.service.SystemsInformationService;
+import br.com.mystudies.jsr356.service.SystemsInformationsService;
+
+import com.google.gson.Gson;
 
 public class TaskSystemsInformationWebsocket implements Runnable{
 
 
 
-	private SystemsInformationService systemsInformationService;
+	private SystemsInformationsService systemsInformationService;
 
 
 	private Session session;
@@ -25,7 +27,6 @@ public class TaskSystemsInformationWebsocket implements Runnable{
 
 	public TaskSystemsInformationWebsocket(Session session) {
 		this.session = session;
-		// TODO USE CDI
 		systemsInformationService = new BasicSystemInformationService();
 	}
 
@@ -42,16 +43,9 @@ public class TaskSystemsInformationWebsocket implements Runnable{
 
 			if (systemsInformationService.haveUpdate()) {
 
-				List<SystemInformation> systemsInformationUpdated =
-						systemsInformationService.getUpdate();
+				List<SystemInformation> systemsInformationUpdated = systemsInformationService.getUpdate();
 
-				String temp = "";
-
-				for (SystemInformation systemInformation : systemsInformationUpdated) {
-					temp += systemInformation + " ";
-				}
-
-				session.getAsyncRemote().sendText(temp);
+				session.getAsyncRemote().sendText(new Gson().toJson(systemsInformationUpdated));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

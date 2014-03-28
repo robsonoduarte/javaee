@@ -18,7 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import br.com.mystudies.jsr356.domain.SystemInformation;
-import br.com.mystudies.jsr356.service.SystemsInformationService;
+import br.com.mystudies.jsr356.service.SystemsInformationsService;
 
 public class TaskSystemsInformationWebsocketTest {
 
@@ -33,7 +33,7 @@ public class TaskSystemsInformationWebsocketTest {
 
 
 	@Mock
-	private SystemsInformationService systemsInformationService;
+	private SystemsInformationsService systemsInformationService;
 
 
 	@InjectMocks
@@ -61,11 +61,18 @@ public class TaskSystemsInformationWebsocketTest {
 		verify(systemsInformationService).haveUpdate();
 		verify(systemsInformationService).getUpdate();
 		verify(session).getAsyncRemote();
-		verify(async).sendText("si1 si2 si3 "); // <-- send the new informations to session
+		
+		verify(async).sendText(
+				"["
+				+ "{\"name\":\"Bureau\",\"numberAccess\":100},"
+				+ "{\"name\":\"Concentre\",\"numberAccess\":200},"
+				+ "{\"name\":\"LNO\",\"numberAccess\":300}"
+				+"]"); // <-- send the new informations to session
 
 	}
 
 
+	
 	@Test
 	public void dontSendMsgToSessionWhenHaventNewInformationOfSystems() {
 
@@ -88,22 +95,6 @@ public class TaskSystemsInformationWebsocketTest {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private List<SystemInformation> getUpdate() {
 
 		List<SystemInformation> systemsInformations = new ArrayList<>();
@@ -113,10 +104,10 @@ public class TaskSystemsInformationWebsocketTest {
 		systemsInformations.add(new SystemInformation("Concentre", 200));
 		systemsInformations.add(new SystemInformation("LNO", 300));
 
+		
+		
 		return systemsInformations;
 	}
-
-
 
 
 }

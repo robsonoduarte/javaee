@@ -5,19 +5,19 @@ public class SystemInformation {
 
 
 	private String name;
-	private int numberAcess;
+	private int numberAccess;
 
 
 	
 	
-	public SystemInformation(String name, int numberAcess){
+	public SystemInformation(String name, int numberAccess){
 		this.name = name;
-		this.numberAcess = numberAcess;
+		this.numberAccess = numberAccess;
 
 	}
 	
-	public void addAcess(int acess) {
-		numberAcess += acess;
+	public void addAccess(int access) {
+		numberAccess += access;
 	}
 
 
@@ -27,7 +27,7 @@ public class SystemInformation {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + numberAcess;
+		result = prime * result + numberAccess;
 		return result;
 	}
 
@@ -49,7 +49,7 @@ public class SystemInformation {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (numberAcess != other.numberAcess)
+		if (numberAccess != other.numberAccess)
 			return false;
 		return true;
 	}
@@ -58,7 +58,7 @@ public class SystemInformation {
 
 	@Override
 	public String toString() {
-		return "SystemInformation [name=" + name + ", numberAcess=" + numberAcess + "]";
+		return "SystemInformation [name=" + name + ", numberAcess=" + numberAccess + "]";
 	}
 
 

@@ -24,7 +24,7 @@ public class SystemInformationUpdate {
 
 
 
-	@Schedule(second="*/5", minute= "*", hour = "*")	
+	@Schedule(second="*/5", minute= "*", hour = "8")	
 	public void update() {
 	
 		System.out.println("updating data.....");
@@ -41,7 +41,7 @@ public class SystemInformationUpdate {
 
 	private void update(List<SystemInformation> systemsInformations) {
 		for (SystemInformation systemInformation : systemsInformations) {
-			systemInformation.addAcess(10);
+			systemInformation.addAccess(10);
 		}		
 	}
 

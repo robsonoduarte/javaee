@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.mystudies.jsr356.domain.SystemInformation;
 
-public interface SystemsInformationService {
+public interface SystemsInformationsService {
 
 	boolean haveUpdate();
 
