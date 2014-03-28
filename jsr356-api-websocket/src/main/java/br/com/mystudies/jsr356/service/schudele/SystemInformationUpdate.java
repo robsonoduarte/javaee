@@ -11,12 +11,12 @@ import br.com.mystudies.jsr356.domain.SystemInformation;
 @Singleton
 public class SystemInformationUpdate {
 
-	
+
 	private SystemsInformationDataBase systemsInformationDataBase;
-	
-	
-	
-	
+
+
+
+
 	public SystemInformationUpdate() {
 		systemsInformationDataBase = new SystemsInformationDataBase();
 	}
@@ -24,17 +24,17 @@ public class SystemInformationUpdate {
 
 
 
-	@Schedule(second="*/5", minute= "*", hour = "8")	
+	@Schedule(second="*/5", minute= "*", hour = "14")
 	public void update() {
-	
+
 		System.out.println("updating data.....");
-		
+
 		List<SystemInformation> systemsInformations = systemsInformationDataBase.list();
-		
+
 		update(systemsInformations);
-		
+
 		systemsInformationDataBase.store(systemsInformations);
-		
+
 	}
 
 
@@ -42,10 +42,10 @@ public class SystemInformationUpdate {
 	private void update(List<SystemInformation> systemsInformations) {
 		for (SystemInformation systemInformation : systemsInformations) {
 			systemInformation.addAccess(10);
-		}		
+		}
 	}
 
-	
-	
-	
+
+
+
 }

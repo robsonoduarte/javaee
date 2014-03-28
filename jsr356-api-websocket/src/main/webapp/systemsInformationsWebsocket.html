@@ -1,40 +1,55 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <script type="text/javascript" src="resources/js/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="resources/js/systemsInformationsWebsocket.js"></script>
-    </head>
-    <body>
-    
-        <h1>Hello World Websocket</h1>
-        
-        <div id="systemsInformations">
-        		<table>
-        			<thead>
-        				<tr>
-        					<td>Name</td>
-        					<td>Number of Access</td>
-        				</tr>
-        			</thead>
-        			<tbody>
-        				<tr>
-        					<td>Bureau</td>
-        					<td id="sys1">Number of Access</td>
-        				</tr>
-        				<tr>
-        					<td>Concrente</td>
-        					<td id="sys2">Number of Access</td>
-        				</tr>
-        				<tr>
-        					<td>LNO</td>
-        					<td id="sys3">Number of Access</td>
-        				</tr>
-        			</tbody>
-        		</table>
-        </div>
-        
-    </body>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>System Monitor</title>
+
+	<link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="resources/js/jquery.tzineClock/jquery.tzineClock.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.tzineClock/jquery.tzineClock.js"></script>
+	<script type="text/javascript" src="resources/js/script.js"></script>
+	<script type="text/javascript" src="resources/js/systemsInformationsWebsocket.js"></script>
+</head>
+
+<body>
+
+	<h1>System Monitor ( Websockets )</h1>
+	
+	
+	<div id="systemsInformations">
+		<table>
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Number of Access</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Bureau</td>
+					<td id="sys1" class="numberAccess">0</td>
+				</tr>
+				<tr>
+					<td>Concrente</td>
+					<td id="sys2" class="numberAccess" >0</td>
+				</tr>
+				<tr>
+					<td>LNO</td>
+					<td id="sys3" class="numberAccess">0</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<div id="fancyClock"></div>
+
+
+
+</body>
 </html>

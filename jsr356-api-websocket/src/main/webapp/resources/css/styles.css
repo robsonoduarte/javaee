@@ -16,8 +16,43 @@ body{
 	margin:40px auto;
 	height:200px;
 	border:1px solid #111111;
-	width:600px;
+	width:198px;
 }
+
+
+#systemsInformations{
+	float: left;
+	margin:22px auto;
+	margin-left: 70px;
+	height:200px;
+	width: 420px;
+	font-size: 27px;
+}
+
+#systemsInformations table tr td{
+	padding: 10px;
+	background-color:#222222;
+}
+
+
+#systemsInformations table thead  td{
+	padding: 10px;
+	color: #3C97C4;
+}
+
+#systemsInformations .numberAccess{
+	padding: 10px;
+	color: #FA6105;
+	text-align: center;
+
+}
+
+#systemsInformations table  thead td{
+	padding: 10px;
+}
+
+
+
 
 
 /* The styles below are only necessary for the demo page */
@@ -26,7 +61,7 @@ h1{
 	background-color:#222222;
 	border-bottom:1px solid black;
 	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
-	font-size:20px;
+	font-size:35px;
 	font-weight:normal;
 	margin-bottom:15px;
 	padding:15px;
