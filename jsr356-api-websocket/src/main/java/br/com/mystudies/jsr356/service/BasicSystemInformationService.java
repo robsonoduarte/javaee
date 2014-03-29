@@ -12,7 +12,7 @@ public class BasicSystemInformationService implements SystemsInformationsService
 	private SystemsInformationDataBase systemsInformationDataBase;
 	
 	
-	private Date temp;
+	private Date lastVerify;
 	
 	
 	public BasicSystemInformationService() {
@@ -39,12 +39,7 @@ public class BasicSystemInformationService implements SystemsInformationsService
 	
 	
 	private boolean verify(Date lastChange) {
-		if(temp != lastChange){
-			temp = lastChange;
-			return true;
-		}
-		
-		return false;
+		return lastVerify != lastChange;
 	}
 
 	
